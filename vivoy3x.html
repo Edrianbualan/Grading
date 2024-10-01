@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades Nimo Bai!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8f0; /* Light greenish background */
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #2d6a4f; /* Dark green for the header */
+            font-style: italic; /* Italic font for the heading */
+        }
+        input {
+            padding: 5px;
+            border: 2px solid #2d6a4f;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #52b788; /* Light green button */
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #40916c; /* Slightly darker green on hover */
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4f4dd; /* Light green result box */
+            border-radius: 5px;
+            color: #2d6a4f;
+            font-weight: bold;
+            font-size: 2em; /* Same size as the heading */
+            text-align: center; /* Center the text */
+        }
+    </style>
+    <script>
+        function checkGrade() {
+            var num = parseInt(document.getElementById("grade").value);
+            var result = "";
+
+            if (num >= 90) {
+                result = "Ka brighta uy! Sana oil";
+            } else if (num >= 80 && num < 90) {
+                result = "Okay na kaayo na boss! Pasar Gyapon";
+            } else if (num >= 70 && num < 80) {
+                result = "Pag Skwela Jud tarung, ayaw sa kanang higugma";
+            } else if (num >= 60 && num < 70) {
+                result = "Pasar Gyapon pero mag uyab namo ni Solarte ayiiee";
+            } else {
+                result = "Kaloyan sa ginoo";
+            }
+
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Grades Nimo Bai! Pila?</h1>
+    
+    <label for="grade">Pakibutang Sa imong Grade:</label>
+    <input type="number" id="grade" name="grade">
+    <button onclick="checkGrade()">Submit</button>
+
+    <p id="output"></p>
+</body>
+</html>
